@@ -55,9 +55,9 @@
                                         eliminar</button> 
                                     <input name = "id" type= "hidden" value = "<%= usu.getId_usuario() %>"/>
                                 </form>
-                                <form action="SvEditarUsuario" method="POST">
+                                <form action="SvEditarUsuario" method="GET">
                                     <button type = "submit" class = "btn btn-primary btn-user btn-block" style = "margin-left:5px">
-                                        <i class="fas fa-solid fa-trash"></i>
+                                        <i class="fas fa-solid fa-pen"></i>
                                         editar</button> 
                                     <input name = "id" type= "hidden" value = "<%= usu.getId_usuario() %>"/>
                                 </form>

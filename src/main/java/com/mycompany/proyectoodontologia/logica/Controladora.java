@@ -19,7 +19,7 @@ public class Controladora {
     public void crearUsuario(String nombre,String contraseña, String rol){
         Usuario usuario = new Usuario();
         usuario.setNombreUsuario(nombre);
-        usuario.setContraseña(contraseña);
+        usuario.setContrasenia(contraseña);
         usuario.setRol(rol);
         controlpersis.crearUsuario(usuario);
     }
@@ -31,6 +31,14 @@ public class Controladora {
     public void eliminarUsuario(int id) throws NonexistentEntityException{
         controlpersis.eliminarUsuario(id);
         
+    }
+    
+    public Usuario buscarUsuario(int id){
+        return controlpersis.buscarUsuario(id);
+    }
+    
+    public void editarUsuario(Usuario usuario) throws Exception{
+        controlpersis.editarUsuario(usuario);
     }
     
 }

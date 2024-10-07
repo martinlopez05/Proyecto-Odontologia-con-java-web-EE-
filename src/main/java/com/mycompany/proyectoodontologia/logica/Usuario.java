@@ -74,7 +74,7 @@ public class Usuario implements Serializable {
         this.nombreUsuario = nombreUsuario;
     }
 
-    public void setContraseña(String contraseña) {
+    public void setContrasenia(String contraseña) {
         this.contrasenia = contraseña;
     }
 

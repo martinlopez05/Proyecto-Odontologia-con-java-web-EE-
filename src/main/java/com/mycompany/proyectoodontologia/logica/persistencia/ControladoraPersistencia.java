@@ -33,5 +33,13 @@ public class ControladoraPersistencia {
     public void eliminarUsuario(int id) throws NonexistentEntityException {
         usuarioJpa.destroy(id);
     }
+
+    public Usuario buscarUsuario(int id) {
+        return usuarioJpa.findUsuario(id);
+    }
+
+    public void editarUsuario(Usuario usuario) throws Exception {
+        usuarioJpa.edit(usuario);
+    }
     
 }

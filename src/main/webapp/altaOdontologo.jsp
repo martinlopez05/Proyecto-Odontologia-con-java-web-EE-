@@ -1,8 +1,4 @@
-<%-- 
-    Document   : altas
-    Created on : 5 oct. 2024, 11:47:23
-    Author     : Usuario
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="components/header.jsp" %>
@@ -34,6 +30,8 @@
             <input type="text" class="form-control form-control-user"
                 name="direccion"   id="exampleRepeatPassword" placeholder="dirección">
         </div>
+        
+        <label>fecha de nacimiento</label><br>
         <div class="col-sm-6 mb-3">
             <input type="date" class="form-control form-control-user"
                 name="fecha_nac"   id="exampleRepeatPassword" placeholder="fecha_nac">

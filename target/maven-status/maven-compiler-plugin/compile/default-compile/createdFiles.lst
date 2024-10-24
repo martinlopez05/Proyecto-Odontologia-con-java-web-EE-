@@ -23,6 +23,7 @@ com\mycompany\proyectoodontologia\logica\Persona_.class
 com\mycompany\proyectoodontologia\servlets\SvEliminarOdontologo.class
 com\mycompany\proyectoodontologia\logica\Paciente_.class
 com\mycompany\proyectoodontologia\logica\Odontologo.class
+com\mycompany\proyectoodontologia\servlets\SvPaciente.class
 com\mycompany\proyectoodontologia\logica\persistencia\TurnoJpaController.class
 com\mycompany\proyectoodontologia\logica\persistencia\UsuarioJpaController.class
 com\mycompany\proyectoodontologia\servlets\SvEditarOdontologo.class

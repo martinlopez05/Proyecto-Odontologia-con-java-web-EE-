@@ -96,6 +96,10 @@ public class Controladora {
         controlpersis.editarOdontologo(odonto);
     }
     
+    public void eliminarOdontologo(int id) throws NonexistentEntityException{
+        controlpersis.eliminarOdontologo(id);
+    }
+    
     
     public void editarHorario(Horario horario) throws Exception{
         controlpersis.editarHorario(horario);
@@ -107,6 +111,54 @@ public class Controladora {
         horario.setHorario_fin(hora_fin);
         controlpersis.crearHorario(horario);
     }
+    
+    
+    public void crearPaciente(String nombre, String apellido, String direccion , String telefono , Date fechaNacPaciente, String tipoSangrePaciente, Boolean tieneOSPaciente, String dniPaciente){
+        Paciente paciente = new Paciente();
+        paciente.setNombre(nombre);
+        paciente.setApellido(apellido);
+        paciente.setDni(dniPaciente);
+        paciente.setDireccion(direccion);
+        paciente.setTelefono(telefono);
+        paciente.setTipo_sangre(tipoSangrePaciente);
+        paciente.setTiene_OS(tieneOSPaciente);
+        paciente.setFecha_nac(fechaNacPaciente);
+        
+        controlpersis.crearPaciente(paciente);
+        
+    }
+    
+    public void crearPaciente(String nombre, String apellido, String direccion , String telefono , Date fechaNacPaciente, String tipoSangrePaciente, Boolean tieneOSPaciente, String dniPaciente,String nombreResponsable,
+        String apellidoResponsable,String direccionResponsable, String telefonoResponsable,String dniResponsable,Date fechaNacResponsable,String tipoResponsable){
+        
+        Responsable responsable = new Responsable();
+        responsable.setApellido(apellidoResponsable);
+        responsable.setDireccion(direccionResponsable);
+        responsable.setDni(dniResponsable);
+        responsable.setNombre(nombreResponsable);
+        responsable.setTipo_responsable(tipoResponsable);
+        responsable.setTelefono(telefonoResponsable);
+        responsable.setFecha_nac(fechaNacResponsable);
+        
+        controlpersis.crearResponsable(responsable);
+ 
+        Paciente paciente = new Paciente();
+        paciente.setNombre(nombre);
+        paciente.setApellido(apellido);
+        paciente.setDni(dniPaciente);
+        paciente.setDireccion(direccion);
+        paciente.setTelefono(telefono);
+        paciente.setTipo_sangre(tipoSangrePaciente);
+        paciente.setTiene_OS(tieneOSPaciente);
+        paciente.setFecha_nac(fechaNacPaciente);
+        paciente.setResponsable(responsable);
+        
+        controlpersis.crearPaciente(paciente);
+    }
+    
+   
+
+    
     
     
     

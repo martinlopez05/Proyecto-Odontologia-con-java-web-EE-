@@ -45,6 +45,7 @@
                 fechaNacFormatted = dateFormat.format(odontoEditar.getFecha_nac());
             }
         %>
+        <label>fecha de nacimiento</label><br>
         <div class="col-sm-6 mb-3">
             <input type="date" class="form-control form-control-user"
                    name="fecha_nac" value="<%= fechaNacFormatted%>" id="exampleRepeatPassword" placeholder="fecha_nac">

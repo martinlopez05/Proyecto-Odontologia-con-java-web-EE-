@@ -10,23 +10,23 @@
 <%@include file = "components/bodyprimeraparte.jsp" %>
 <h1>Editar Usuario</h1>
 <p>Este es el apartado para la modificación de los datos del usuario</p>
-<% Usuario usuario = (Usuario) request.getSession().getAttribute("usuario"); %>
+<% Usuario usu = (Usuario) request.getSession().getAttribute("usuario"); %>
 <form class="user" action = "SvEditarUsuario" method="POST">
     
     <div class="form-group col-sm-6 mb-3">
         
         <div class="col-sm-6 mb-3 ">
             <input type="text" class="form-control form-control-user" id="nombreUsuario" name="nombreUsuario"
-                   value = "<%=usuario.getNombreUsuario() %>" placeholder="nombre de usuario">
+                   value = "<%=usu.getNombreUsuario() %>" placeholder="nombre de usuario">
         </div>
         <div class="col-sm-6 mb-3">
             <input type="password" class="form-control form-control-user" id="contrasenia" name="contrasenia"
-                value ="<%=usuario.getContrasenia() %>"   placeholder="contraseña">
+                value ="<%=usu.getContrasenia() %>"   placeholder="contraseña">
         </div>
         
         <div class="col-sm-6 mb-3">
             <input type="text" class="form-control form-control-user" id="rol" name="rol"
-                value = "<%=usuario.getRol()%> "   placeholder="rol">
+                value = "<%=usu.getRol()%> "   placeholder="rol">
         </div>
     
     </div>

@@ -9,43 +9,52 @@
 <%@include file="components/bodyprimeraparte.jsp" %>
 <h1>Alta Odontólogo</h1>
 
-<form class="user">
+<form class="user" action="SvOdontologo" method="POST">
     <div class="form-group col-sm-6 mb-3">
         
         <div class="col-sm-6 mb-3 ">
             <input type="text" class="form-control form-control-user" id="exampleFirstName"
-                   placeholder="Nombre">
+                name="nombre"   placeholder="Nombre">
         </div>
         <div class="col-sm-6 mb-3">
             <input type="text" class="form-control form-control-user" id="exampleLastName"
-                   placeholder="Apellido">
+                name="apellido"   placeholder="Apellido">
         </div>
         
         <div class="col-sm-6 mb-3">
             <input type="text" class="form-control form-control-user" id="exampleLastName"
-                   placeholder="DNI">
+                name="dni"   placeholder="dni">
         </div>
     
         <div class="col-sm-6 mb-3">
             <input type="text" class="form-control form-control-user"
-                   id="exampleInputPassword" placeholder="telefono">
+                name="telefono"   id="exampleInputPassword" placeholder="telefono">
         </div>
         <div class="col-sm-6 mb-3">
             <input type="text" class="form-control form-control-user"
-                   id="exampleRepeatPassword" placeholder="dirección">
+                name="direccion"   id="exampleRepeatPassword" placeholder="dirección">
+        </div>
+        <div class="col-sm-6 mb-3">
+            <input type="date" class="form-control form-control-user"
+                name="fecha_nac"   id="exampleRepeatPassword" placeholder="fecha_nac">
         </div>
         <div class="col-sm-6 mb-3">
             <input type="text" class="form-control form-control-user"
-                   id="exampleRepeatPassword" placeholder="fecha_nac">
+                name="especialidad"   id="exampleRepeatPassword" placeholder="especialidad">
         </div>
         <div class="col-sm-6 mb-3">
             <input type="text" class="form-control form-control-user"
-                   id="exampleRepeatPassword" placeholder="especialidad">
+                id="exampleRepeatPassword" name="horainicio"placeholder="horario inicio">
+        </div>
+        <div class="col-sm-6 mb-3">
+            <input type="text" class="form-control form-control-user"
+                   id="exampleRepeatPassword" name="horafin" placeholder="horario fin">
         </div>
     </div>
-    <a href="login.html" class="btn btn-primary btn-user btn-block">
-        Registrar Odontólogo
-    </a>
+    <button  class="btn btn-primary btn-user btn-block" type = "submit" >
+        registrar odontólogo
+    </button>
+   
     <hr>
 
 </form>

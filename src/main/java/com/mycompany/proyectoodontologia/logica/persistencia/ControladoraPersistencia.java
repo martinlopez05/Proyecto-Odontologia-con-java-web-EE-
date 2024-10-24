@@ -4,6 +4,8 @@
  */
 package com.mycompany.proyectoodontologia.logica.persistencia;
 
+import com.mycompany.proyectoodontologia.logica.Horario;
+import com.mycompany.proyectoodontologia.logica.Odontologo;
 import com.mycompany.proyectoodontologia.logica.Usuario;
 import com.mycompany.proyectoodontologia.logica.persistencia.exceptions.NonexistentEntityException;
 import java.util.List;
@@ -40,6 +42,30 @@ public class ControladoraPersistencia {
 
     public void editarUsuario(Usuario usuario) throws Exception {
         usuarioJpa.edit(usuario);
+    }
+
+    public void crearHorario(Horario horario) {
+        horarioJpa.create(horario);
+    }
+
+    public void crearOdontologo(Odontologo odontologo) {
+        odontologoJpa.create(odontologo);
+    }
+
+    public List<Odontologo> traerOdontologos() {
+        return odontologoJpa.findOdontologoEntities();
+    }
+
+    public Odontologo buscarOdontologo(int id) {
+        return odontologoJpa.findOdontologo(id);
+    }
+
+    public void editarOdontologo(Odontologo odonto) throws Exception {
+        odontologoJpa.edit(odonto);
+    }
+
+    public void editarHorario(Horario horario) throws Exception {
+        horarioJpa.edit(horario);
     }
     
 }

@@ -28,7 +28,9 @@ public class Persona implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_persona;
     
+    
     private String dni;
+    private String nombre;
     private String apellido;
     private String telefono;
     private String direccion;
@@ -36,8 +38,19 @@ public class Persona implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date fecha_nac;
 
-    public Persona(int id_persona, String dni, String apellido, String telefono, String direccion, Date fecha_nac) {
+    public Persona(int id_persona, String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac) {
         this.id_persona = id_persona;
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.telefono = telefono;
+        this.direccion = direccion;
+        this.fecha_nac = fecha_nac;
+    }
+
+    
+
+    public Persona(String dni, String apellido, String telefono, String direccion, Date fecha_nac) {
         this.dni = dni;
         this.apellido = apellido;
         this.telefono = telefono;
@@ -45,6 +58,8 @@ public class Persona implements Serializable {
         this.fecha_nac = fecha_nac;
     }
 
+    
+    
     public Persona() {
     }
 
@@ -95,6 +110,16 @@ public class Persona implements Serializable {
     public void setFecha_nac(Date fecha_nac) {
         this.fecha_nac = fecha_nac;
     }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+    
+    
     
     
     

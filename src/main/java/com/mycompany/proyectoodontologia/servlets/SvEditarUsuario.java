@@ -37,9 +37,9 @@ public class SvEditarUsuario extends HttpServlet {
             throws ServletException, IOException {
         
         int id_usuario = Integer.parseInt(request.getParameter("id"));
-        Usuario usuarioEditar = control.buscarUsuario(id_usuario);
+        Usuario usuario = control.buscarUsuario(id_usuario);
         HttpSession misesion = request.getSession();
-        misesion.setAttribute("usuario", usuarioEditar);
+        misesion.setAttribute("usuario", usuario);
         response.sendRedirect("editarUsuario.jsp");
         
     }

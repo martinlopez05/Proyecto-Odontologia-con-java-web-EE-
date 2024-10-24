@@ -1,5 +1,6 @@
 com\mycompany\proyectoodontologia\logica\Secretario.class
 com\mycompany\proyectoodontologia\logica\persistencia\PacienteJpaController.class
+com\mycompany\proyectoodontologia\servlets\SvOdontologo.class
 com\mycompany\proyectoodontologia\logica\Paciente.class
 com\mycompany\proyectoodontologia\logica\persistencia\HorarioJpaController.class
 com\mycompany\proyectoodontologia\logica\Horario_.class
@@ -19,15 +20,18 @@ com\mycompany\proyectoodontologia\logica\Persona.class
 com\mycompany\proyectoodontologia\servlets\SvEditarUsuario.class
 com\mycompany\proyectoodontologia\logica\Turno.class
 com\mycompany\proyectoodontologia\logica\Persona_.class
+com\mycompany\proyectoodontologia\servlets\SvEliminarOdontologo.class
 com\mycompany\proyectoodontologia\logica\Paciente_.class
 com\mycompany\proyectoodontologia\logica\Odontologo.class
 com\mycompany\proyectoodontologia\logica\persistencia\TurnoJpaController.class
 com\mycompany\proyectoodontologia\logica\persistencia\UsuarioJpaController.class
+com\mycompany\proyectoodontologia\servlets\SvEditarOdontologo.class
 com\mycompany\proyectoodontologia\resources\JakartaEE8Resource.class
 com\mycompany\proyectoodontologia\servlets\SvEliminarUsuario.class
 com\mycompany\proyectoodontologia\logica\Responsable_.class
 com\mycompany\proyectoodontologia\logica\Secretario_.class
 com\mycompany\proyectoodontologia\logica\persistencia\exceptions\NonexistentEntityException.class
+com\mycompany\proyectoodontologia\servlets\SvLogin.class
 com\mycompany\proyectoodontologia\servlets\SvUsuario.class
 com\mycompany\proyectoodontologia\logica\Controladora.class
 com\mycompany\proyectoodontologia\logica\Turno_.class

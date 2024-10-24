@@ -32,16 +32,16 @@ public class Usuario implements Serializable {
     public Usuario() {
     }
 
-    public Usuario(int id_usuario, String nombreUsuario, String contraseña, String rol) {
+    public Usuario(int id_usuario, String nombreUsuario, String contrasenia, String rol) {
         this.id_usuario = id_usuario;
         this.nombreUsuario = nombreUsuario;
-        this.contrasenia = contraseña;
+        this.contrasenia = contrasenia;
         this.rol = rol;
     }
 
-    public Usuario(String nombreUsuario, String contraseña, String rol) {
+    public Usuario(String nombreUsuario, String contrasenia, String rol) {
         this.nombreUsuario = nombreUsuario;
-        this.contrasenia = contraseña;
+        this.contrasenia = contrasenia;
         this.rol = rol;
     }
     

@@ -34,8 +34,8 @@ public class Paciente extends Persona implements Serializable {
     public Paciente() {
     }
 
-    public Paciente(boolean tiene_OS, String tipo_sangre, List<Turno> turnos, Responsable responsable, int id_persona, String dni, String apellido, String telefono, String direccion, Date fecha_nac) {
-        super(id_persona, dni, apellido, telefono, direccion, fecha_nac);
+    public Paciente(boolean tiene_OS, String tipo_sangre,String nombre, List<Turno> turnos, Responsable responsable, int id_persona, String dni, String apellido, String telefono, String direccion, Date fecha_nac) {
+        super(id_persona, dni,nombre, apellido, telefono, direccion, fecha_nac);
         this.tiene_OS = tiene_OS;
         this.tipo_sangre = tipo_sangre;
         this.turnos = turnos;

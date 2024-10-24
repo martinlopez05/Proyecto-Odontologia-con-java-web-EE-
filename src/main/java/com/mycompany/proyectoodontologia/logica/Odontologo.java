@@ -7,6 +7,7 @@ package com.mycompany.proyectoodontologia.logica;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -24,20 +25,28 @@ public class Odontologo extends Persona implements Serializable{
     @OneToMany(mappedBy = "odonto")
     private List<Turno> turnos;
     
-    @OneToOne
+    @OneToOne(cascade = CascadeType.PERSIST)
     private Horario horario;
     
     @OneToOne
     private Usuario usuario;
 
-    public Odontologo(String especialidad, List<Turno> turnos, Horario horario, Usuario usuario, int id_persona, String dni, String apellido, String telefono, String direccion, Date fecha_nac) {
-        super(id_persona, dni, apellido, telefono, direccion, fecha_nac);
+    public Odontologo(String especialidad, List<Turno> turnos, Horario horario, int id_persona, String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac) {
+        super(id_persona, dni, nombre, apellido, telefono, direccion, fecha_nac);
         this.especialidad = especialidad;
         this.turnos = turnos;
         this.horario = horario;
-        this.usuario = usuario;
     }
 
+   
+
+    public Odontologo(String especialidad, List<Turno> turnos, Horario horario) {
+        this.especialidad = especialidad;
+        this.turnos = turnos;
+        this.horario = horario;
+    }
+
+  
     
 
     public Odontologo() {
@@ -78,6 +87,8 @@ public class Odontologo extends Persona implements Serializable{
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
+    
+    
     
     
     

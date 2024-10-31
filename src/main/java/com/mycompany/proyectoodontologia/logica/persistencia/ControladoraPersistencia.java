@@ -81,5 +81,24 @@ public class ControladoraPersistencia {
     public void crearPaciente(Paciente paciente) {
         pacienteJpa.create(paciente);
     }
-    
+
+    public List<Paciente> traerPacientes() {
+        return pacienteJpa.findPacienteEntities();
+    }
+
+    public void eliminarPaciente(int id) throws NonexistentEntityException {
+        pacienteJpa.destroy(id);
+    }
+
+    public Paciente buscarPaciente(int id) {
+        return pacienteJpa.findPaciente(id);
+    }
+
+    public void editarPaciente(Paciente paciente) throws Exception {
+        pacienteJpa.edit(paciente);
+    }
+
+    public void editarResponsable(Responsable responsable) throws Exception {
+        responsableJpa.edit(responsable);
+    }
 }

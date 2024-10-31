@@ -1,5 +1,6 @@
 com\mycompany\proyectoodontologia\logica\Secretario.class
 com\mycompany\proyectoodontologia\logica\persistencia\PacienteJpaController.class
+com\mycompany\proyectoodontologia\servlets\SvTurno.class
 com\mycompany\proyectoodontologia\servlets\SvOdontologo.class
 com\mycompany\proyectoodontologia\logica\Paciente.class
 com\mycompany\proyectoodontologia\logica\persistencia\HorarioJpaController.class
@@ -13,16 +14,19 @@ com\mycompany\proyectoodontologia\logica\Responsable.class
 com\mycompany\proyectoodontologia\logica\persistencia\PersonaJpaController.class
 com\mycompany\proyectoodontologia\logica\persistencia\ResponsableJpaController.class
 com\mycompany\proyectoodontologia\logica\persistencia\SecretarioJpaController.class
+com\mycompany\proyectoodontologia\servlets\SvEditarPaciente.class
 com\mycompany\proyectoodontologia\logica\Usuario.class
 com\mycompany\proyectoodontologia\logica\persistencia\exceptions\IllegalOrphanException.class
 com\mycompany\proyectoodontologia\logica\Odontologo_.class
 com\mycompany\proyectoodontologia\logica\Persona.class
+utils\DateUtils.class
 com\mycompany\proyectoodontologia\servlets\SvEditarUsuario.class
 com\mycompany\proyectoodontologia\logica\Turno.class
 com\mycompany\proyectoodontologia\logica\Persona_.class
 com\mycompany\proyectoodontologia\servlets\SvEliminarOdontologo.class
 com\mycompany\proyectoodontologia\logica\Paciente_.class
 com\mycompany\proyectoodontologia\logica\Odontologo.class
+com\mycompany\proyectoodontologia\servlets\SvEliminarPaciente.class
 com\mycompany\proyectoodontologia\servlets\SvPaciente.class
 com\mycompany\proyectoodontologia\logica\persistencia\TurnoJpaController.class
 com\mycompany\proyectoodontologia\logica\persistencia\UsuarioJpaController.class

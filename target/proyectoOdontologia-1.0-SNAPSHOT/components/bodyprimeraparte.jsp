@@ -9,20 +9,18 @@
 <body id="page-top">
 
     <!-- validacion -->
-    
-    <%HttpSession sesion = request.getSession();
-      String usuario = (String) sesion.getAttribute("nombreUsuario");
-      if(usuario == null){
-        response.sendRedirect("sinLogin.jsp");
-        
-      }
-      
 
-    
-    
+    <%HttpSession sesion = request.getSession();
+        String usuario = (String) sesion.getAttribute("nombreUsuario");
+        if (usuario == null) {
+            response.sendRedirect("sinLogin.jsp");
+
+        }
+
+
     %>
-    
-    
+
+
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -58,7 +56,7 @@
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
+                   aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-hospital-user"></i>
                     <span>Odontólogos</span>
                 </a>
@@ -67,7 +65,7 @@
                         <h6 class="collapse-header">Opciones:</h6>
                         <a class="collapse-item" href="SvOdontologo">Ver Odontólogos</a>
                         <a class="collapse-item" href="altaOdontologo.jsp">Alta Odontólogos</a>
-                   
+
                     </div>
                 </div>
             </li>
@@ -75,23 +73,40 @@
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
+                   aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-solid fa-user"></i>
                     <span>Pacientes</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
+                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Opciones:</h6>
-                        <a class="collapse-item" href="buttons.html">Ver Pacientes</a>
+                        <a class="collapse-item" href="SvPaciente">Ver Pacientes</a>
                         <a class="collapse-item" href="altaPaciente.jsp">Alta Pacientes</a>
                     </div>
                 </div>
             </li>
-            
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsethree"
+                   aria-expanded="true" aria-controls="collapsethree">
+                    <i class="fas fa-sharp fa-solid fa-newspaper"></i>
+                    <span>Turnos</span>
+                </a>
+                <div id="collapsethree" class="collapse" aria-labelledby="headingUtilities"
+                     data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Opciones:</h6>
+                        <a class="collapse-item" href="">Ver Turnos</a>
+                        <a class="collapse-item" href="altaTurno.jsp">Alta Turnos</a>
+                    </div>
+                </div>
+            </li>
+
+
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUsers"
-                    aria-expanded="true" aria-controls="collapseTwo">
+                   aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-solid fa-user-lock"></i>
                     <span>Usuarios</span>
                 </a>
@@ -104,9 +119,9 @@
                 </div>
             </li>
 
-            
 
-           
+
+
 
         </ul>
         <!-- End of Sidebar -->
@@ -125,21 +140,21 @@
                         <i class="fa fa-bars"></i>
                     </button>
 
-                    
+
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
-                        
+
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%= request.getSession().getAttribute("nombreUsuario") %></span>
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%= request.getSession().getAttribute("nombreUsuario")%></span>
                                 <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
+                                     src="img/undraw_profile.svg">
                             </a>
-                            
+
                         </li>
 
                     </ul>
@@ -153,5 +168,5 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Clínica odontológica</h1>
-                        
+
                     </div>

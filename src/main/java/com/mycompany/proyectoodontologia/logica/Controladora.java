@@ -62,7 +62,7 @@ public class Controladora {
     }
     
     
-    public void crearOdontologo(String especialidad,String hora_inicio,String hora_fin,String dni,String nombre, String apellido, String telefono, String direccion, Date fecha_nac){
+    public void crearOdontologo(String hora_inicio,String hora_fin,String dni,String nombre, String apellido, String telefono, String direccion, Date fecha_nac){
         Horario horario = new Horario();
         horario.setHorario_inicio(hora_inicio);
         horario.setHorario_fin(hora_fin);
@@ -73,7 +73,6 @@ public class Controladora {
         odontologo.setApellido(apellido);
         odontologo.setTelefono(telefono);
         odontologo.setDireccion(direccion);
-        odontologo.setEspecialidad(especialidad);
         odontologo.setHorario(horario);
         odontologo.setDni(dni);
         odontologo.setFecha_nac(fecha_nac);
@@ -156,11 +155,36 @@ public class Controladora {
         controlpersis.crearPaciente(paciente);
     }
     
+    
+    public List<Paciente> traerPacientes(){
+        return controlpersis.traerPacientes();
+    }
+    
+    public void eliminarPaciente(int id) throws NonexistentEntityException{
+        controlpersis.eliminarPaciente(id);
+    }
    
-
+    public Paciente buscarPaciente(int id){
+        return controlpersis.buscarPaciente(id);
+    }
+    
+    public void editarPaciente(Paciente paciente) throws Exception{
+        controlpersis.editarPaciente(paciente);
+        if(paciente.getResponsable()!=null){
+            this.editarResponsable(paciente.getResponsable());
+        }
+        
+    }
+    
+    public void editarResponsable(Responsable responsable) throws Exception{
+        controlpersis.editarResponsable(responsable);
+        
+    }
     
     
-    
+    public void crearTurno(){
+        
+    }
     
     
 }

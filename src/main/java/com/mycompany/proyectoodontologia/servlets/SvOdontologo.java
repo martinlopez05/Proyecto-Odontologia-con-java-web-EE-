@@ -15,6 +15,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -40,13 +41,11 @@ public class SvOdontologo extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         List<Odontologo> odontologos = control.traerOdontologos();
         HttpSession sesion = request.getSession();
         sesion.setAttribute("odontologos", odontologos);
-        
         response.sendRedirect("verOdontologos.jsp");
-
     }
 
     @Override
@@ -57,23 +56,21 @@ public class SvOdontologo extends HttpServlet {
         String dni = request.getParameter("dni");
         String telefono = request.getParameter("telefono");
         String direccion = request.getParameter("direccion");
-        String especialidad = request.getParameter("especialidad");
         String hora_inicio = request.getParameter("horainicio");
         String hora_fin = request.getParameter("horafin");
 
         String fechaNacStr = request.getParameter("fecha_nac");
-        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd"); 
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
         Date fecha_nac = null;
-        
+
         try {
-            fecha_nac = formato.parse(fechaNacStr); 
-        }  
-        catch (java.text.ParseException ex) {
+            fecha_nac = formato.parse(fechaNacStr);
+        } catch (java.text.ParseException ex) {
             Logger.getLogger(SvOdontologo.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        control.crearOdontologo(especialidad, hora_inicio,hora_fin , dni,nombre, apellido, telefono, direccion, fecha_nac);
-        
+
+        control.crearOdontologo(hora_inicio, hora_fin, dni, nombre, apellido, telefono, direccion, fecha_nac);
+
         response.sendRedirect("index.jsp");
     }
 

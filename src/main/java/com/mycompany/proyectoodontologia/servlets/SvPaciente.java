@@ -5,12 +5,14 @@
 package com.mycompany.proyectoodontologia.servlets;
 
 import com.mycompany.proyectoodontologia.logica.Controladora;
+import com.mycompany.proyectoodontologia.logica.Paciente;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.Date;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -18,6 +20,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import utils.DateUtils;
 
 /**
  *
@@ -25,7 +29,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "SvPaciente", urlPatterns = {"/SvPaciente"})
 public class SvPaciente extends HttpServlet {
-    
+
     Controladora control = new Controladora();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -36,7 +40,11 @@ public class SvPaciente extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        List<Paciente> pacientes = control.traerPacientes();
+        System.out.println("Pacientes obtenidos: " + pacientes);
+        HttpSession sesion = request.getSession();
+        sesion.setAttribute("pacientes", pacientes);
+        response.sendRedirect("verPacientes.jsp");
     }
 
     @Override
@@ -49,65 +57,35 @@ public class SvPaciente extends HttpServlet {
         String tipoSangrePaciente = request.getParameter("tipoSangrePaci");
         String txtObrasocialPaciente = request.getParameter("obraSocialPaci");
         String dniPaciente = request.getParameter("dniPaci");
-        boolean tieneOSpaciente;
-        
-        if(txtObrasocialPaciente.equals("si")){
-            tieneOSpaciente = true;
-        }
-        else{
-            tieneOSpaciente = false;
-        }
-        
-        
-        
-        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
-        Date fechaNacimientoPaciente = null;
-        try {
-            fechaNacimientoPaciente = formato.parse(request.getParameter("fechaNacPaci"));
-        } catch (java.text.ParseException ex) {
-            Logger.getLogger(SvOdontologo.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        boolean tieneOSpaciente = "si".equalsIgnoreCase(txtObrasocialPaciente);
 
+        Date fechaNacimientoPaciente = DateUtils.parseFecha(request.getParameter("fechaNacPaci"));
         LocalDate fechaNacimientoLocal = new java.sql.Date(fechaNacimientoPaciente.getTime()).toLocalDate();
-
         Period edad = Period.between(fechaNacimientoLocal, LocalDate.now());
 
-        if (edad.getYears() < 18) {
-            String nombreResponsable = request.getParameter("nombreRespon");
-            String apellidoResponsable = request.getParameter("apellidoRespon");
-            String telefonoResponsable = request.getParameter("telefonoRespon");
-            String direccionResponsable = request.getParameter("direccionRespon");
-            String dniResponsable = request.getParameter("dniRespon");
-            String tipoResponsable = request.getParameter("tipoRespon");
-            String fechaNacResponsable = request.getParameter("fechaNacRespon");
-            
-            Date fechaNacimientoResponsable = null;
-            try{
-                fechaNacimientoResponsable = formato.parse(request.getParameter("fechaNacRespon"));
-            }catch (java.text.ParseException ex) {
-            Logger.getLogger(SvOdontologo.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
-      
-            if (nombreResponsable != null && !nombreResponsable.isEmpty()
-                    && apellidoResponsable != null && !apellidoResponsable.isEmpty()
-                    && telefonoResponsable != null && !telefonoResponsable.isEmpty()
-                    && direccionResponsable != null && !direccionResponsable.isEmpty()
-                    && dniResponsable != null && !dniResponsable.isEmpty() && tipoResponsable != null) {
-                control.crearPaciente(nombrePaciente, apellidoPaciente, direccionPaciente, telefonoPaciente, fechaNacimientoPaciente, tipoSangrePaciente,tieneOSpaciente,dniPaciente,
-                        nombreResponsable,apellidoResponsable,direccionResponsable,telefonoResponsable,dniResponsable,fechaNacimientoResponsable, tipoResponsable);
-            } else {
-                request.setAttribute("errorMessage", "Por favor, complete todos los datos del responsable.");
-            }
+        String nombreResponsable = request.getParameter("nombreRespon");
+        String apellidoResponsable = request.getParameter("apellidoRespon");
+        String telefonoResponsable = request.getParameter("telefonoRespon");
+        String direccionResponsable = request.getParameter("direccionRespon");
+        String dniResponsable = request.getParameter("dniRespon");
+        String tipoResponsable = request.getParameter("tipoRespon");
+        Date fechaNacimientoResponsable = DateUtils.parseFecha(request.getParameter("fechaNacRespon"));
 
-        }
-        else{
+        boolean tieneResponsable = nombreResponsable != null && !nombreResponsable.isEmpty()
+                && apellidoResponsable != null && !apellidoResponsable.isEmpty()
+                && telefonoResponsable != null && !telefonoResponsable.isEmpty()
+                && direccionResponsable != null && !direccionResponsable.isEmpty()
+                && dniResponsable != null && !dniResponsable.isEmpty()
+                && tipoResponsable != null && !tipoResponsable.isEmpty();
+
+        if (tieneResponsable) {
+            control.crearPaciente(nombrePaciente, apellidoPaciente, direccionPaciente, telefonoPaciente, fechaNacimientoPaciente, tipoSangrePaciente, tieneOSpaciente, dniPaciente,
+                    nombreResponsable, apellidoResponsable, direccionResponsable, telefonoResponsable, dniResponsable, fechaNacimientoResponsable, tipoResponsable);
+        } else {
             control.crearPaciente(nombrePaciente, apellidoPaciente, direccionPaciente, telefonoPaciente, fechaNacimientoPaciente, tipoSangrePaciente, tieneOSpaciente, dniPaciente);
-            
         }
         
         response.sendRedirect("index.jsp");
-        
 
     }
 

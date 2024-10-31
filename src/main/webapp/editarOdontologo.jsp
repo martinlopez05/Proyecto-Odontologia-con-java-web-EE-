@@ -4,6 +4,7 @@
     Author     : Usuario
 --%>
 
+<%@page import="utils.DateUtils"%>
 <%@page import="com.mycompany.proyectoodontologia.logica.Odontologo"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="components/header.jsp" %>
@@ -11,7 +12,7 @@
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.Date" %>
 
-<h1>Alta Odontólogo</h1>
+<h1>Editar Odontólogo</h1>
 <% Odontologo odontoEditar = (Odontologo) request.getSession().getAttribute("odontoEditar");%>
 <form class="user" action="SvEditarOdontologo" method="POST">
     <div class="form-group col-sm-6 mb-3">
@@ -38,22 +39,11 @@
             <input type="text" class="form-control form-control-user"
                    name="direccion" value=<%= odontoEditar.getDireccion()%>   id="exampleRepeatPassword" placeholder="dirección">
         </div>
-        <%
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-            String fechaNacFormatted = "";
-            if (odontoEditar.getFecha_nac() != null) {
-                fechaNacFormatted = dateFormat.format(odontoEditar.getFecha_nac());
-            }
-        %>
+        
         <label>fecha de nacimiento</label><br>
         <div class="col-sm-6 mb-3">
             <input type="date" class="form-control form-control-user"
-                   name="fecha_nac" value="<%= fechaNacFormatted%>" id="exampleRepeatPassword" placeholder="fecha_nac">
-        </div>
-
-        <div class="col-sm-6 mb-3">
-            <input type="text" class="form-control form-control-user"
-                   name="especialidad"  value=<%= odontoEditar.getEspecialidad()%>  id="exampleRepeatPassword" placeholder="especialidad">
+                   name="fecha_nac" value="<%= DateUtils.formatearFecha(odontoEditar.getFecha_nac()) %>" id="exampleRepeatPassword" placeholder="fecha_nac">
         </div>
         <div class="col-sm-6 mb-3">
             <input type="text" class="form-control form-control-user"

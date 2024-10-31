@@ -20,7 +20,6 @@ import javax.persistence.OneToOne;
 @Entity
 public class Odontologo extends Persona implements Serializable{
     
-    private String especialidad;
     
     @OneToMany(mappedBy = "odonto")
     private List<Turno> turnos;
@@ -31,17 +30,16 @@ public class Odontologo extends Persona implements Serializable{
     @OneToOne
     private Usuario usuario;
 
-    public Odontologo(String especialidad, List<Turno> turnos, Horario horario, int id_persona, String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac) {
+    public Odontologo(List<Turno> turnos, Horario horario, int id_persona, String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac) {
         super(id_persona, dni, nombre, apellido, telefono, direccion, fecha_nac);
-        this.especialidad = especialidad;
+        
         this.turnos = turnos;
         this.horario = horario;
     }
 
    
 
-    public Odontologo(String especialidad, List<Turno> turnos, Horario horario) {
-        this.especialidad = especialidad;
+    public Odontologo( List<Turno> turnos, Horario horario) {
         this.turnos = turnos;
         this.horario = horario;
     }
@@ -54,9 +52,7 @@ public class Odontologo extends Persona implements Serializable{
 
     
 
-    public String getEspecialidad() {
-        return especialidad;
-    }
+    
 
     public List<Turno> getTurnos() {
         return turnos;
@@ -71,10 +67,6 @@ public class Odontologo extends Persona implements Serializable{
     }
 
     
-
-    public void setEspecialidad(String especialidad) {
-        this.especialidad = especialidad;
-    }
 
     public void setTurnos(List<Turno> turnos) {
         this.turnos = turnos;

@@ -61,7 +61,7 @@ public class Paciente extends Persona implements Serializable {
     public Responsable getResponsable() {
         return responsable;
     }
-
+    
     
 
     public void setTiene_OS(boolean tiene_OS) {

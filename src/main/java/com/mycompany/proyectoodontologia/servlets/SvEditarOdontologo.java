@@ -59,7 +59,6 @@ public class SvEditarOdontologo extends HttpServlet {
         String dni = request.getParameter("dni");
         String telefono = request.getParameter("telefono");
         String direccion = request.getParameter("direccion");
-        String especialidad = request.getParameter("especialidad");
         String hora_inicio = request.getParameter("horainicio");
         String hora_fin = request.getParameter("horafin");
 
@@ -81,7 +80,6 @@ public class SvEditarOdontologo extends HttpServlet {
         odontoEditar.setApellido(apellido);
         odontoEditar.setDireccion(direccion);
         odontoEditar.setDni(dni);
-        odontoEditar.setEspecialidad(especialidad);
         odontoEditar.setFecha_nac(fecha_nac);
         odontoEditar.setTelefono(telefono);
         

@@ -1,9 +1,5 @@
-<%-- 
-    Document   : verUsuarios
-    Created on : 6 oct. 2024, 17:25:49
-    Author     : Usuario
---%>
 
+<%@page import="utils.DateUtils"%>
 <%@page import="com.mycompany.proyectoodontologia.logica.Odontologo"%>
 <%@page import="com.mycompany.proyectoodontologia.logica.Usuario"%>
 <%@page import="java.util.List"%>
@@ -33,7 +29,7 @@
                             <th>dni</th>
                             <th>telefono</th>
                             <th>direccion</th>
-                            <th>especialidad</th>
+                            <th>fecha nacimiento</th>
                             <th style = "width: 210px">Acción</th>
                         </tr>
                     </thead>
@@ -45,7 +41,7 @@
                             <th>dni</th>
                             <th>telefono</th>
                             <th>direccion</th>
-                            <th>especialidad</th>
+                            <th>fecha nacimiento</th>
                             <th style = "width: 210px">Acción</th>
 
                         </tr>
@@ -60,7 +56,7 @@
                             <td><%= odon.getDni()%></td>
                             <td><%= odon.getTelefono()%></td>
                             <td><%= odon.getDireccion()%></td>
-                            <td><%= odon.getEspecialidad()%></td>
+                            <td><%= DateUtils.formatearFechaPerso(odon.getFecha_nac())%></td>
                             <td style = "display: flex ; width: 210px">
                                 <form action="SvEliminarOdontologo" method="POST">
                                     <button type = "submit" class = "btn btn-primary btn-user btn-block" style = " background-color:red; margin-right:5px">

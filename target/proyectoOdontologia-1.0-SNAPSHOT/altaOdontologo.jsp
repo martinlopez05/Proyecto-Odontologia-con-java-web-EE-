@@ -38,10 +38,6 @@
         </div>
         <div class="col-sm-6 mb-3">
             <input type="text" class="form-control form-control-user"
-                name="especialidad"   id="exampleRepeatPassword" placeholder="especialidad">
-        </div>
-        <div class="col-sm-6 mb-3">
-            <input type="text" class="form-control form-control-user"
                 id="exampleRepeatPassword" name="horainicio"placeholder="horario inicio">
         </div>
         <div class="col-sm-6 mb-3">

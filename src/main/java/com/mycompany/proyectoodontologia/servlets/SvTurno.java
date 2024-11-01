@@ -6,6 +6,8 @@ package com.mycompany.proyectoodontologia.servlets;
 
 import com.mycompany.proyectoodontologia.logica.Controladora;
 import com.mycompany.proyectoodontologia.logica.Odontologo;
+import com.mycompany.proyectoodontologia.logica.Paciente;
+import static com.mycompany.proyectoodontologia.logica.Turno_.paciente;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -37,6 +39,14 @@ public class SvTurno extends HttpServlet {
         List<Odontologo> odontologos = control.traerOdontologos();
         HttpSession session = request.getSession();
         session.setAttribute("odontologos", odontologos);
+        
+        List<Paciente> pacientes = control.traerPacientes();
+        session.setAttribute("pacientes", pacientes);
+        request.getRequestDispatcher("altaTurno.jsp").forward(request, response);
+        
+        
+        
+        
     }
 
     @Override

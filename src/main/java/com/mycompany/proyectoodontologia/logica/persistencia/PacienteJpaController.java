@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
 
 /**
@@ -28,12 +29,11 @@ public class PacienteJpaController implements Serializable {
         this.emf = emf;
     }
     private EntityManagerFactory emf = null;
-    
-    public PacienteJpaController(){
+
+    public PacienteJpaController() {
         emf = Persistence.createEntityManagerFactory("proyectoOdontologiaPU");
 
     }
-
 
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
@@ -192,5 +192,7 @@ public class PacienteJpaController implements Serializable {
             em.close();
         }
     }
+
     
+
 }

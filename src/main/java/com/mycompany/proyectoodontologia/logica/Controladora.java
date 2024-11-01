@@ -187,4 +187,9 @@ public class Controladora {
     }
     
     
+    public List<Paciente> buscarPacientesPorDni(String dni){
+        return controlpersis.buscarPacientesPorDni(dni);
+    }
+    
+    
 }

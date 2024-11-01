@@ -101,4 +101,7 @@ public class ControladoraPersistencia {
     public void editarResponsable(Responsable responsable) throws Exception {
         responsableJpa.edit(responsable);
     }
+
+    
+    
 }

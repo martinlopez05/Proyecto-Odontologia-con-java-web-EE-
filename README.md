@@ -9,6 +9,9 @@ Este proyecto es un sistema de gestión de turnos para una clínica odontológic
 - Asignar turnos a pacientes.
 - Visualizar una tabla de turnos programados.
 
+## Captura del proyecto
+
+![Captura del Proyecto]("./assets/Captura de pantalla 2025-01-20 195244.png")
 
 ## Tecnologías Utilizadas
 - Java 17

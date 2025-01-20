@@ -11,7 +11,7 @@ Este proyecto es un sistema de gestión de turnos para una clínica odontológic
 
 ## Captura del proyecto
 
-![Captura del Proyecto](./assets/Captura%20de%20pantalla%202025-01-20%20195244.png)
+![Captura del Proyecto](src/main/java/assets/Captura%20de%20pantalla%202025-01-20%20195244.png)
 
 ## Tecnologías Utilizadas
 - Java 17

@@ -53,6 +53,11 @@
             <input type="text" class="form-control form-control-user"
                    id="exampleRepeatPassword" name="horaTurno" placeholder="Horario del turno">
         </div>
+        <div class="col-sm-6 mb-3" style="margin-top:20px">
+            <input type="date" class="form-control form-control-user"
+                   id="exampleRepeatPassword" name="fechaTurno" placeholder="Fecha del turno">
+        </div>
+            
     </div>
     <button class="btn btn-primary btn-user btn-block" type="submit">
         Registrar Turno

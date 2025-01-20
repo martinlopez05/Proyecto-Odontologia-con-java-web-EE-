@@ -8,6 +8,7 @@ import com.mycompany.proyectoodontologia.logica.Horario;
 import com.mycompany.proyectoodontologia.logica.Odontologo;
 import com.mycompany.proyectoodontologia.logica.Paciente;
 import com.mycompany.proyectoodontologia.logica.Responsable;
+import com.mycompany.proyectoodontologia.logica.Turno;
 import com.mycompany.proyectoodontologia.logica.Usuario;
 import com.mycompany.proyectoodontologia.logica.persistencia.exceptions.NonexistentEntityException;
 import java.util.List;
@@ -100,6 +101,18 @@ public class ControladoraPersistencia {
 
     public void editarResponsable(Responsable responsable) throws Exception {
         responsableJpa.edit(responsable);
+    }
+
+    public void crearTurno(Turno turno) {
+       turnoJpa.create(turno);
+    }
+
+    public List<Turno> traerTurnos() {
+        return turnoJpa.findTurnoEntities();
+    }
+
+    public void eliminarTurno(int idTurno) throws NonexistentEntityException {
+        turnoJpa.destroy(idTurno);
     }
 
     

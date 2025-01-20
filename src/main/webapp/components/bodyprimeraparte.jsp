@@ -40,7 +40,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link">
                     <i class="fas fa-solid fa-bars"></i>
                     <span>Menú</span></a>
             </li>
@@ -97,8 +97,8 @@
                      data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Opciones:</h6>
-                        <a class="collapse-item" href="">Ver Turnos</a>
-                        <a class="collapse-item" href="SvTurno">Alta Turnos</a>
+                        <a class="collapse-item" href="SvTurno?action=verTurnos">Ver Turnos</a>
+                        <a class="collapse-item" href="SvTurno?action=altaTurno">Alta Turnos</a>
                     </div>
                 </div>
             </li>

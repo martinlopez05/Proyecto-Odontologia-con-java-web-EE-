@@ -182,14 +182,26 @@ public class Controladora {
     }
     
     
-    public void crearTurno(){
+    public void crearTurno(int odontologoId, int pacienteId, String afeccion, Date fechaTurno, String horaTurno){
+        Paciente paciente = this.buscarPaciente(pacienteId);
+        Odontologo odontologo = this.buscarOdontologo(odontologoId);
+        Turno turno = new Turno();
+        turno.setAfeccion(afeccion);
+        turno.setFecha_turno(fechaTurno);
+        turno.setHora_turno(horaTurno);
+        turno.setPaciente(paciente);
+        turno.setOdonto(odontologo);
+        controlpersis.crearTurno(turno);
         
     }
     
-    
-    public List<Paciente> buscarPacientesPorDni(String dni){
-        return controlpersis.buscarPacientesPorDni(dni);
+    public List<Turno> traerTurnos(){
+        return controlpersis.traerTurnos();
     }
     
+    public void eliminarTurno(int idTurno) throws NonexistentEntityException{
+        controlpersis.eliminarTurno(idTurno);
+    }
     
+       
 }

@@ -38,5 +38,6 @@ com\mycompany\proyectoodontologia\logica\Secretario_.class
 com\mycompany\proyectoodontologia\logica\persistencia\exceptions\NonexistentEntityException.class
 com\mycompany\proyectoodontologia\servlets\SvLogin.class
 com\mycompany\proyectoodontologia\servlets\SvUsuario.class
+com\mycompany\proyectoodontologia\servlets\SvEliminarTurno.class
 com\mycompany\proyectoodontologia\logica\Controladora.class
 com\mycompany\proyectoodontologia\logica\Turno_.class
